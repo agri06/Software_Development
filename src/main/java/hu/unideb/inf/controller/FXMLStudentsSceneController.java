@@ -5,20 +5,15 @@
  */
 package hu.unideb.inf.controller;
 
-import hu.unideb.inf.model.Student;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -36,6 +31,8 @@ public class FXMLStudentsSceneController {
     Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
     Alert error = new Alert(Alert.AlertType.ERROR);
 
+
+
     @FXML
     void handleButtonPushed(ActionEvent event) {
         if(userIDTextField.getText().equals(username)){
@@ -52,11 +49,10 @@ public class FXMLStudentsSceneController {
         }
 
     }
-
     @FXML
-    void handlepasswordbutton(ActionEvent event){
+    void handlepasswordPushed() {
 
-
+    
     }
 
 
