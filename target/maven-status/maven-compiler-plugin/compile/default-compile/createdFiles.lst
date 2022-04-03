@@ -1,2 +1,3 @@
 hu\unideb\inf\controller\adminController.class
 hu\unideb\inf\controller\forgotController.class
+hu\unideb\inf\controller\StageHelper.class

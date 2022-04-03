@@ -12,8 +12,13 @@ import org.h2.tools.Server;
 
 public class MainApp extends Application {
 
+    public static Stage stage;
+
     @Override
     public void start(Stage stage) throws Exception {
+        MainApp.stage = stage;
+
+
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLStudentsScene.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setTitle("Hotel Management");

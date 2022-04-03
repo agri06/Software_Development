@@ -9,17 +9,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import hu.unideb.inf.MainApp;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 
 /**
  * FXML Controller class
@@ -66,9 +62,23 @@ public class FXMLStudentsSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+    @FXML
+    public void handlepasswordPushed(ActionEvent actionEvent) throws IOException{
+        StageHelper.setScene("/fxml/forgot.fxml", "Forgot password");
+    }
 
-    public void handlepasswordPushed(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/forgot.fxml"));
+    @FXML
+    public void buttonpushed(ActionEvent event) {
+        int a = JOptionPane.showConfirmDialog(null,"Do you really want to exit","select",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            System.exit(0);
+        }
+
+    }
+    @FXML
+    public void buttonpressed(ActionEvent event) {
+
 
     }
 }
