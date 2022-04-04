@@ -39,10 +39,14 @@ public class FXMLStudentsSceneController implements Initializable {
 
     @FXML
     void handleButtonPushed(ActionEvent event) {
+
         if(userIDTextField.getText().equals(username)){
             if(passwordField.getText().equals(password)){
-                confirm.setContentText("Login is successful");
-                confirm.show();
+               // confirm.setContentText("Login is successful");
+                StageHelper.setScene("/fxml/adminpage.fxml","Welcome");
+               // confirm.show();
+
+
             }else{
                 error.setContentText("Password was incorrect!");
                 error.show();
@@ -51,6 +55,10 @@ public class FXMLStudentsSceneController implements Initializable {
             error.setContentText("Username was incorrect!");
             error.show();
         }
+
+
+
+
 
     }
 

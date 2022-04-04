@@ -1,3 +1,4 @@
-hu\unideb\inf\controller\adminController.class
+hu\unideb\inf\controller\ManageroomsController.class
+hu\unideb\inf\controller\adminpageController.class
 hu\unideb\inf\controller\forgotController.class
 hu\unideb\inf\controller\StageHelper.class
