@@ -3,52 +3,58 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 
 <AnchorPane prefHeight="599.0" prefWidth="874.0" stylesheets="@styl.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.ManageroomsController">
    <children>
-      <Label layoutX="46.0" layoutY="38.0" prefHeight="33.0" prefWidth="333.0" style="-fx-background-color: #F0FFFF;" text="Manage Rooms" textFill="#463232">
+      <Label layoutX="59.0" layoutY="19.0" prefHeight="33.0" prefWidth="333.0" text="Manage Rooms" textFill="#fcfcfc">
          <font>
-            <Font size="28.0" />
+            <Font name="Baskerville Old Face" size="53.0" />
          </font>
       </Label>
-      <TreeTableView layoutX="64.0" layoutY="168.0" prefHeight="281.0" prefWidth="333.0">
-        <columns>
-          <TreeTableColumn prefWidth="75.0" text="C1" />
-          <TreeTableColumn prefWidth="75.0" text="C2" />
-            <TreeTableColumn prefWidth="49.0" text="Column X" />
-        </columns>
-      </TreeTableView>
-      <Label layoutX="509.0" layoutY="94.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #FFFAFA;" text="Room Number" textFill="#252525">
+      <Label layoutX="59.0" layoutY="134.0" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #BDB76B;" text="Room Number" textFill="#252525">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="509.0" layoutY="131.0" prefHeight="25.0" prefWidth="236.0" />
-      <Label layoutX="509.0" layoutY="178.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #FFFAFA;" text="Room Type">
+      <TextField layoutX="59.0" layoutY="171.0" prefHeight="25.0" prefWidth="236.0" />
+      <Label layoutX="59.0" layoutY="218.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #BDB76B;" text="Room Type">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="509.0" layoutY="221.0" prefHeight="25.0" prefWidth="236.0" />
-      <ComboBox layoutX="509.0" layoutY="321.0" prefHeight="25.0" prefWidth="236.0" />
-      <Label layoutX="509.0" layoutY="274.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #FFFAFA;" text="Bed">
+      <ComboBox fx:id="comb" layoutX="59.0" layoutY="261.0" onAction="#select" prefHeight="25.0" prefWidth="236.0" promptText="Select Room Type" />
+      <ComboBox fx:id="combo" layoutX="59.0" layoutY="361.0" onAction="#cselect" prefHeight="25.0" prefWidth="236.0" promptText="Select Bed" />
+      <Label layoutX="59.0" layoutY="314.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #BDB76B;" text="Bed">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="509.0" layoutY="377.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #FFFAFA;" text="Price">
+      <Label layoutX="59.0" layoutY="417.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #BDB76B;" text="Price">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="509.0" layoutY="424.0" prefHeight="25.0" prefWidth="236.0" />
-      <Button layoutX="509.0" layoutY="476.0" mnemonicParsing="false" text="Add Room" />
+      <TextField layoutX="59.0" layoutY="464.0" prefHeight="25.0" prefWidth="236.0" />
+      <Button layoutX="59.0" layoutY="516.0" mnemonicParsing="false" style="-fx-background-color: #BDB76B;" text="Add Room">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
       <Button layoutX="690.0" layoutY="38.0" mnemonicParsing="false" onAction="#backbuttonpushed" text="Back to Admin Page" />
+      <TableView layoutX="467.0" layoutY="110.0" opacity="0.85" prefHeight="353.0" prefWidth="372.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Room No." />
+          <TableColumn prefWidth="75.0" text="Room Type" />
+            <TableColumn prefWidth="75.0" text="Bed" />
+            <TableColumn prefWidth="75.0" text="Price" />
+            <TableColumn prefWidth="75.0" text="Status" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

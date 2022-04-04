@@ -43,7 +43,7 @@ public class FXMLStudentsSceneController implements Initializable {
         if(userIDTextField.getText().equals(username)){
             if(passwordField.getText().equals(password)){
                // confirm.setContentText("Login is successful");
-                StageHelper.setScene("/fxml/adminpage.fxml","Welcome");
+                StageHelper.setScene("/fxml/adminpage.fxml","Welcome Admin");
                // confirm.show();
 
 

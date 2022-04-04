@@ -39,5 +39,9 @@ public class adminpageController implements Initializable {
     public void managebuttonpushed(ActionEvent event) {
         StageHelper.setScene("/fxml/Managerooms.fxml","Manage Rooms");
     }
+
+    public void buttonpushed(ActionEvent event) {
+        StageHelper.setScene("/fxml/CustomerCheckIn.fxml","Customer Check In");
+    }
 }
 
