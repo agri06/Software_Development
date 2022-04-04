@@ -26,6 +26,7 @@ public class FXMLStudentsSceneController implements Initializable {
 
     public TextField userIDTextField;
     public PasswordField passwordField;
+    public CheckBox button4;
 
     private String username = "ashish";
     private String password = "abcd";

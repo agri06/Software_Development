@@ -12,7 +12,7 @@ public class StageHelper {
     public static void setScene(String sceneName, String stageTile) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(sceneName));
-                Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+                Scene scene = new Scene(fxmlLoader.load());
                 Stage stage = MainApp.stage;
 
                 stage.setTitle(stageTile);
