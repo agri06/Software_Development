@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="553.0" prefWidth="824.0" stylesheets="@styliii.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.homeController">
    <children>
       <Label layoutX="38.0" layoutY="28.0" text="Hotel Management" textFill="#2c2f2b">
@@ -13,12 +12,12 @@
             <Font name="System Bold" size="42.0" />
          </font>
       </Label>
-      <Button layoutX="687.0" layoutY="44.0" mnemonicParsing="false" onAction="#exitbuttonpushed" style="-fx-background-color: #CD853F;" text="Exit">
+      <Button layoutX="687.0" layoutY="44.0" mnemonicParsing="false" onAction="#exitbuttonpushed" style="-fx-background-color: #728FCE; -fx-alignment: #728FCE;" text="Exit">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="359.0" layoutY="277.0" mnemonicParsing="false" onAction="#enterbuttonpushed" style="-fx-background-color: #CD853F;" text="Enter">
+      <Button layoutX="359.0" layoutY="277.0" mnemonicParsing="false" onAction="#enterbuttonpushed" style="-fx-background-color: #728FCE; -fx-alignment: #728FCE;" text="Enter">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
