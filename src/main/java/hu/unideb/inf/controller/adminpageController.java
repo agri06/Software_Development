@@ -41,7 +41,21 @@ public class adminpageController implements Initializable {
     }
 
     public void buttonpushed(ActionEvent event) {
+
         StageHelper.setScene("/fxml/CustomerCheckIn.fxml","Customer Check In");
+    }
+    @FXML
+    public void handlepushed(ActionEvent event) {
+
+            StageHelper.setScene("/fxml/Customercheckout.fxml","Customer Check Out");
+
+
+
+
+    }
+    @FXML
+    public void handlebutton(ActionEvent event) {
+        StageHelper.setScene("/fxml/Customerbills.fxml","Customer Bill Details");
     }
 }
 

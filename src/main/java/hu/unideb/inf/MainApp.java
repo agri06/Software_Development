@@ -19,7 +19,7 @@ public class MainApp extends Application {
         MainApp.stage = stage;
 
 
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLStudentsScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/home.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setTitle("Hotel Management");
         stage.setScene(scene);

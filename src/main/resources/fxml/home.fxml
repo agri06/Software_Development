@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="553.0" prefWidth="824.0" stylesheets="@styliii.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.homeController">
+   <children>
+      <Label layoutX="38.0" layoutY="28.0" text="Hotel Management" textFill="#2c2f2b">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Label>
+      <Button layoutX="687.0" layoutY="44.0" mnemonicParsing="false" onAction="#exitbuttonpushed" style="-fx-background-color: #CD853F;" text="Exit">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="359.0" layoutY="277.0" mnemonicParsing="false" onAction="#enterbuttonpushed" style="-fx-background-color: #CD853F;" text="Enter">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
