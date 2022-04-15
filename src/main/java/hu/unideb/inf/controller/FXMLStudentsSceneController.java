@@ -96,13 +96,9 @@ public class FXMLStudentsSceneController implements Initializable {
             passwordField.setVisible(true);
         }
 
-
-
-
-
     }
     @FXML
     public void signbuttonpushed(ActionEvent event) {
-
+        StageHelper.setScene("/fxml/signup.fxml","Sign Up");
     }
 }
