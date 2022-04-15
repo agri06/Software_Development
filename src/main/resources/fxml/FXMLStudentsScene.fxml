@@ -30,8 +30,9 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="58.0" layoutY="293.0" mnemonicParsing="false" onAction="#handlepasswordPushed" prefHeight="25.0" prefWidth="134.0" text="Forgot Password ?" textAlignment="CENTER" textFill="#171515" />
+                  <Button layoutX="139.0" layoutY="293.0" mnemonicParsing="false" onAction="#handlepasswordPushed" prefHeight="25.0" prefWidth="120.0" text="Forgot Password ?" textAlignment="CENTER" textFill="#171515" />
                   <CheckBox fx:id="button4" layoutX="107.0" layoutY="201.0" mnemonicParsing="false" onAction="#buttonpressed" text="Show Password" />
+                  <Button fx:id="signupbutton" layoutX="38.0" layoutY="293.0" mnemonicParsing="false" onAction="#signbuttonpushed" text="Sign up" />
                </children>
             </AnchorPane>
          </children>
