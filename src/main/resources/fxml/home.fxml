@@ -7,20 +7,32 @@
 
 <AnchorPane prefHeight="553.0" prefWidth="824.0" stylesheets="@styliii.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.homeController">
    <children>
-      <Label layoutX="38.0" layoutY="28.0" text="Hotel Management" textFill="#2c2f2b">
-         <font>
-            <Font name="System Bold" size="42.0" />
-         </font>
-      </Label>
-      <Button layoutX="687.0" layoutY="44.0" mnemonicParsing="false" onAction="#exitbuttonpushed" style="-fx-background-color: #728FCE; -fx-alignment: #728FCE;" text="Exit">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="359.0" layoutY="277.0" mnemonicParsing="false" onAction="#enterbuttonpushed" style="-fx-background-color: #728FCE; -fx-alignment: #728FCE;" text="Enter">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Button>
+      <AnchorPane layoutX="354.0" layoutY="264.0" prefHeight="62.0" prefWidth="92.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="6.0" layoutY="9.0" mnemonicParsing="false" onAction="#enterbuttonpushed" style="-fx-background-color: #728FCE; -fx-alignment: #728FCE;" text="Enter">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="693.0" layoutY="36.0" prefHeight="45.0" prefWidth="57.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#exitbuttonpushed" style="-fx-background-color: #728FCE; -fx-alignment: #728FCE;" text="Exit">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="35.0" layoutY="14.0" prefHeight="73.0" prefWidth="397.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="7.0" layoutY="6.0" style="-fx-background-color: #728FCE;" text="Hotel Management" textFill="#2c2f2b">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

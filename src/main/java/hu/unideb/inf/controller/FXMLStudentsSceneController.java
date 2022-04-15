@@ -87,6 +87,17 @@ public class FXMLStudentsSceneController implements Initializable {
     }
     @FXML
     public void buttonpressed(ActionEvent event) {
+        if(button4.isSelected()){
+            passwordField.setVisible(false);
+
+
+        }
+        else{
+            passwordField.setVisible(true);
+        }
+
+
+
 
 
     }

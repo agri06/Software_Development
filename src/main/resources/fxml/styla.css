@@ -1,3 +1,6 @@
 .root{
    -fx-background-image:url('pets.jpg');
+   -fx-background-size: cover;
+   -fx-background-position: centre;
+
 }

@@ -9,45 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="599.0" prefWidth="874.0" stylesheets="@styl.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.ManageroomsController">
    <children>
-      <Label layoutX="59.0" layoutY="19.0" prefHeight="33.0" prefWidth="333.0" text="Manage Rooms" textFill="#fcfcfc">
-         <font>
-            <Font name="Baskerville Old Face" size="53.0" />
-         </font>
-      </Label>
-      <Label layoutX="59.0" layoutY="134.0" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #BDB76B;" text="Room Number" textFill="#252525">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="59.0" layoutY="171.0" prefHeight="25.0" prefWidth="236.0" />
-      <Label layoutX="59.0" layoutY="218.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #BDB76B;" text="Room Type">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="comb" layoutX="59.0" layoutY="261.0" onAction="#select" prefHeight="25.0" prefWidth="236.0" promptText="Select Room Type" />
-      <ComboBox fx:id="combo" layoutX="59.0" layoutY="361.0" onAction="#cselect" prefHeight="25.0" prefWidth="236.0" promptText="Select Bed" />
-      <Label layoutX="59.0" layoutY="314.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #BDB76B;" text="Bed">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="59.0" layoutY="417.0" prefHeight="17.0" prefWidth="124.0" style="-fx-background-color: #BDB76B;" text="Price">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="59.0" layoutY="464.0" prefHeight="25.0" prefWidth="236.0" />
-      <Button layoutX="59.0" layoutY="516.0" mnemonicParsing="false" style="-fx-background-color: #BDB76B;" text="Add Room">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="690.0" layoutY="38.0" mnemonicParsing="false" onAction="#backbuttonpushed" text="Back to Admin Page" />
-      <TableView layoutX="467.0" layoutY="110.0" opacity="0.85" prefHeight="353.0" prefWidth="372.0">
+      <TextField layoutX="59.0" layoutY="181.0" prefHeight="25.0" prefWidth="236.0" />
+      <ComboBox fx:id="comb" layoutX="59.0" layoutY="271.0" onAction="#select" prefHeight="25.0" prefWidth="236.0" promptText="Select Room Type" />
+      <ComboBox fx:id="combo" layoutX="59.0" layoutY="371.0" onAction="#cselect" prefHeight="25.0" prefWidth="236.0" promptText="Select Bed" />
+      <TextField layoutX="59.0" layoutY="474.0" prefHeight="25.0" prefWidth="236.0" />
+      <TableView layoutX="457.0" layoutY="123.0" opacity="0.85" prefHeight="353.0" prefWidth="372.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Room No." />
           <TableColumn prefWidth="75.0" text="Room Type" />
@@ -56,5 +24,64 @@
             <TableColumn prefWidth="75.0" text="Status" />
         </columns>
       </TableView>
+      <AnchorPane layoutX="58.0" layoutY="137.0" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="7.0" layoutY="8.0" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #FFFFFF;" text="Room Number" textFill="#252525">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="57.0" layoutY="231.0" prefHeight="35.0" prefWidth="103.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="8.0" layoutY="8.0" prefHeight="20.0" prefWidth="87.0" style="-fx-background-color: #FFFFFF;" text="Room Type">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="56.0" layoutY="327.0" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="8.0" layoutY="8.0" prefHeight="20.0" prefWidth="43.0" style="-fx-background-color: #FFFFFF;" text="Bed">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="61.0" layoutY="428.0" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="8.0" layoutY="8.0" prefHeight="20.0" prefWidth="43.0" style="-fx-background-color: #FFFFFF;" text="Price">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="61.0" layoutY="519.0" prefHeight="57.0" prefWidth="123.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="13.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Add Room">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="55.0" layoutY="14.0" prefHeight="77.0" prefWidth="351.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="9.0" layoutY="7.0" prefHeight="35.0" prefWidth="333.0" style="-fx-background-color: #FFFFFF;" text="Manage Rooms" textFill="#111010">
+               <font>
+                  <Font name="Baskerville Old Face" size="53.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="686.0" layoutY="25.0" prefHeight="43.0" prefWidth="143.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="10.0" layoutY="9.0" mnemonicParsing="false" onAction="#backbuttonpushed" text="Back to Admin Page" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

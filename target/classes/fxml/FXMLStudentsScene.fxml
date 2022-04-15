@@ -12,31 +12,43 @@
 
 <AnchorPane id="AnchorPane" prefHeight="557.0" prefWidth="746.0" style="-fx-background-color: #D3D3D3;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLStudentsSceneController">
    <children>
-      <AnchorPane layoutX="66.0" layoutY="143.0" prefHeight="338.0" prefWidth="298.0" style="-fx-background-color: #808080;">
+      <AnchorPane layoutX="42.0" layoutY="119.0" prefHeight="360.0" prefWidth="305.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="helloWorldText" layoutX="28.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login" wrappingWidth="261.126953125">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Text>
-            <Text layoutX="28.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER ID: " textAlignment="CENTER" wrappingWidth="68.947265625" />
-            <TextField fx:id="userIDTextField" layoutX="127.0" layoutY="103.0" promptText="enter username" />
-            <Text layoutX="24.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD: " textAlignment="CENTER" wrappingWidth="75.947265625" />
-            <PasswordField fx:id="passwordField" layoutX="127.0" layoutY="157.0" promptText="enter password" />
-            <Button fx:id="button1" layoutX="110.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleButtonPushed" text="Login" textFill="#232328">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="77.0" layoutY="291.0" mnemonicParsing="false" onAction="#handlepasswordPushed" prefHeight="25.0" prefWidth="134.0" text="Forgot Password ?" textAlignment="CENTER" textFill="#171515" />
-            <CheckBox fx:id="button4" layoutX="127.0" layoutY="201.0" mnemonicParsing="false" onAction="#buttonpressed" text="Show Password" />
+            <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="332.0" prefWidth="276.0" style="-fx-background-color: #808080;">
+               <children>
+                  <Text fx:id="helloWorldText" layoutX="24.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login" wrappingWidth="231.126953125">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER ID: " textAlignment="CENTER" wrappingWidth="68.947265625" />
+                  <TextField fx:id="userIDTextField" layoutX="105.0" layoutY="103.0" promptText="enter username" />
+                  <Text layoutX="14.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD: " textAlignment="CENTER" wrappingWidth="75.947265625" />
+                  <PasswordField fx:id="passwordField" accessibleRole="TEXT_FIELD" layoutX="105.0" layoutY="156.0" promptText="enter password" />
+                  <Button fx:id="button1" layoutX="90.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleButtonPushed" text="Login" textFill="#232328">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="58.0" layoutY="293.0" mnemonicParsing="false" onAction="#handlepasswordPushed" prefHeight="25.0" prefWidth="134.0" text="Forgot Password ?" textAlignment="CENTER" textFill="#171515" />
+                  <CheckBox fx:id="button4" layoutX="107.0" layoutY="201.0" mnemonicParsing="false" onAction="#buttonpressed" text="Show Password" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="182.0" fitWidth="203.0" layoutX="456.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@admin.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="button3" layoutX="680.0" layoutY="14.0" mnemonicParsing="false" onAction="#buttonpushed" text="Close" />
+      <AnchorPane layoutX="454.0" layoutY="61.0" prefHeight="145.0" prefWidth="143.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="125.0" fitWidth="120.0" layoutX="12.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@admin.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="661.0" layoutY="22.0" prefHeight="39.0" prefWidth="62.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button fx:id="button3" layoutX="9.0" layoutY="7.0" mnemonicParsing="false" onAction="#buttonpushed" text="Close" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
