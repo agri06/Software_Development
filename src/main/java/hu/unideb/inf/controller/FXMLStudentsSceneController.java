@@ -101,4 +101,8 @@ public class FXMLStudentsSceneController implements Initializable {
 
 
     }
+    @FXML
+    public void signbuttonpushed(ActionEvent event) {
+
+    }
 }
