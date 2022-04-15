@@ -1,5 +1,6 @@
 package hu.unideb.inf.controller;
 
+import hu.unideb.inf.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +21,7 @@ public class homeController implements Initializable {
         int a = JOptionPane.showConfirmDialog(null,"Do you really want to exit","select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
+            MainApp.stopDatabase();
             System.exit(0);
         }
 
