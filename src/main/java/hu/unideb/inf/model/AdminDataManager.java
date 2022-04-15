@@ -40,7 +40,7 @@ public class AdminDataManager implements AdminDataDAOInterface{
 
     @Override
     public List<AdminData> getAllData() {
-        TypedQuery<AdminData> query = entityManager.createQuery("SELECT * FROM ADMIN_DATA", AdminData.class);
+        TypedQuery<AdminData> query = entityManager.createQuery("SELECT adminData FROM AdminData adminData", AdminData.class);
         List<AdminData> adminDataList = query.getResultList();
         return adminDataList;
     }

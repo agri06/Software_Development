@@ -3,7 +3,7 @@ package hu.unideb.inf.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "admin_data")
+@Table(name = "AdminData")
 public class AdminData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
