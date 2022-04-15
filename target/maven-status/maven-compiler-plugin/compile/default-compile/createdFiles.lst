@@ -2,7 +2,6 @@ hu\unideb\inf\controller\PetsCheckInController.class
 hu\unideb\inf\controller\homeController.class
 hu\unideb\inf\controller\CustomerbillsController.class
 hu\unideb\inf\controller\ManageroomsController.class
-hu\unideb\inf\Database\DAO.class
 hu\unideb\inf\controller\forgotController.class
 hu\unideb\inf\controller\StageHelper.class
 hu\unideb\inf\controller\adminpageController.class
