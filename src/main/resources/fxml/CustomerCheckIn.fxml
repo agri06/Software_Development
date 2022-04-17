@@ -17,9 +17,7 @@
       <TextField layoutX="428.0" layoutY="176.0" prefHeight="25.0" prefWidth="264.0" />
       <TextField layoutX="428.0" layoutY="275.0" prefHeight="25.0" prefWidth="264.0" />
       <TextField layoutX="428.0" layoutY="371.0" prefHeight="25.0" prefWidth="264.0" />
-      <ComboBox fx:id="combo" layoutX="827.0" layoutY="176.0" onAction="#combobutton" prefHeight="25.0" prefWidth="238.0" />
-      <ComboBox fx:id="comboo" layoutX="827.0" layoutY="275.0" onAction="#comboobutton" prefHeight="25.0" prefWidth="245.0" />
-      <ComboBox fx:id="combooo" layoutX="830.0" layoutY="369.0" onAction="#combooobutton" prefHeight="25.0" prefWidth="245.0" />
+      <ComboBox fx:id="combooo" layoutX="824.0" layoutY="275.0" onAction="#combooobutton" prefHeight="25.0" prefWidth="245.0" />
       <TextField layoutX="829.0" layoutY="468.0" prefHeight="25.0" prefWidth="245.0" />
       <AnchorPane layoutX="82.0" layoutY="130.0" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #000000;">
          <children>
@@ -93,7 +91,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="419.0" layoutY="461.0" prefHeight="40.0" prefWidth="307.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="419.0" layoutY="536.0" prefHeight="40.0" prefWidth="307.0" style="-fx-background-color: #000000;">
          <children>
             <Label alignment="TOP_CENTER" layoutX="6.0" layoutY="7.0" prefHeight="26.0" prefWidth="291.0" style="-fx-background-color: #FFFFFF;" text="Do you have any Pets to Check In?" textFill="#141313">
                <font>
@@ -102,25 +100,25 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="827.0" layoutY="130.0" prefHeight="40.0" prefWidth="56.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="426.0" layoutY="423.0" prefHeight="40.0" prefWidth="107.0" style="-fx-background-color: #000000;">
          <children>
-            <Label alignment="TOP_CENTER" layoutX="6.0" layoutY="7.0" prefHeight="27.0" prefWidth="45.0" style="-fx-background-color: #FFFFFF;" text="Bed" textFill="#1e1e1e">
+            <Label alignment="TOP_CENTER" layoutX="6.0" layoutY="7.0" prefHeight="27.0" prefWidth="93.0" style="-fx-background-color: #FFFFFF;" text="Check out" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="828.0" layoutY="228.0" prefHeight="40.0" prefWidth="107.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="821.0" layoutY="130.0" prefHeight="40.0" prefWidth="154.0" style="-fx-background-color: #000000;">
          <children>
-            <Label alignment="TOP_CENTER" layoutX="6.0" layoutY="8.0" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #FFFFFF;" text="Room Type" textFill="#141414">
+            <Label alignment="TOP_CENTER" layoutX="7.0" layoutY="8.0" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #FFFFFF;" text="No. of Members" textFill="#141414">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="830.0" layoutY="324.0" prefHeight="40.0" prefWidth="93.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="824.0" layoutY="228.0" prefHeight="40.0" prefWidth="93.0" style="-fx-background-color: #000000;">
          <children>
             <Label alignment="TOP_CENTER" layoutX="7.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #FFFFFF;" text="Room No." textFill="#222121">
                <font>
@@ -138,24 +136,6 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="830.0" layoutY="542.0" prefHeight="40.0" prefWidth="116.0" style="-fx-background-color: #000000;">
-         <children>
-            <Button contentDisplay="CENTER" layoutX="6.0" layoutY="5.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Allot Room" textFill="#171717">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="830.0" layoutY="589.0" prefHeight="40.0" prefWidth="68.0" style="-fx-background-color: #000000;">
-         <children>
-            <Button layoutX="6.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Clear" textFill="#252424">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
       <AnchorPane layoutX="940.0" layoutY="35.0" prefHeight="40.0" prefWidth="145.0" style="-fx-background-color: #000000;">
          <children>
             <Button layoutX="11.0" layoutY="8.0" mnemonicParsing="false" onAction="#backbuttonpushed" text="Back to Admin Page" />
@@ -170,22 +150,56 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="426.0" layoutY="522.0" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="426.0" layoutY="604.0" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: #000000;">
          <children>
-            <Button layoutX="6.0" layoutY="8.0" mnemonicParsing="false" onAction="#buttonpushed" text="Yes">
+            <Button layoutX="5.0" layoutY="8.0" mnemonicParsing="false" onAction="#buttonpushed" text="Yes">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="525.0" layoutY="521.0" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="525.0" layoutY="602.0" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: #000000;">
          <children>
-            <Button layoutX="5.0" layoutY="8.0" mnemonicParsing="false" text="No">
+            <Button layoutX="4.0" layoutY="7.0" mnemonicParsing="false" text="No">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
+         </children>
+      </AnchorPane>
+      <TextField layoutX="428.0" layoutY="475.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField layoutX="824.0" layoutY="176.0" prefHeight="25.0" prefWidth="245.0" />
+      <AnchorPane layoutX="824.0" layoutY="324.0" prefHeight="40.0" prefWidth="93.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="TOP_CENTER" layoutX="7.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #FFFFFF;" text="Pet Tag" textFill="#222121">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField layoutX="828.0" layoutY="371.0" prefHeight="25.0" prefWidth="264.0" />
+      <AnchorPane layoutX="871.0" layoutY="519.0" prefHeight="128.0" prefWidth="139.0" style="-fx-background-color: #808000;">
+         <children>
+            <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Button contentDisplay="CENTER" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Allot Room" textFill="#171717">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="36.0" layoutY="70.0" prefHeight="46.0" prefWidth="68.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Button layoutX="6.0" layoutY="7.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: #FFFFFF;" text="Clear" textFill="#252424">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
