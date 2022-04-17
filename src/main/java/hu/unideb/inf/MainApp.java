@@ -27,7 +27,7 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    private static void startDatabase() throws SQLException {
+    public static void startDatabase() throws SQLException {
         s.runTool("-tcp", "-web", "-ifNotExists");
     }
 
@@ -39,5 +39,6 @@ public class MainApp extends Application {
         startDatabase();
         launch(args);
         stopDatabase();
+
     }
 }
