@@ -9,6 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
+
 
 public class SignupController implements Initializable {
 
@@ -48,5 +50,14 @@ public class SignupController implements Initializable {
             keyError.setContentText("You have Entered A wrong key! Please try again!");
             keyError.show();
         }
+    }
+    @FXML
+    public void backbuttonpushed(ActionEvent event) {
+        int a = JOptionPane.showConfirmDialog(null,"Want to go Back?","select",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            StageHelper.setScene("/fxml/FXMLStudentsScene.fxml","Admin Login");
+        }
+
     }
 }
