@@ -32,32 +32,14 @@ public class CustomerCheckInController implements Initializable {
         ObservableList<String> list = FXCollections.observableArrayList("Male","Female","Others");
         comb.setItems(list);
 
-        ObservableList<String> list1 = FXCollections.observableArrayList("Single","Double","Triple");
-        combo.setItems(list1);
 
-        ObservableList<String> list2 = FXCollections.observableArrayList("AC","Non-AC");
-        comboo.setItems(list2);
 
         ObservableList<String> list3 = FXCollections.observableArrayList();
         combooo.setItems(list3);
 
     }
 
-    @FXML
-    void combobutton(ActionEvent event) {
-        String b = combo.getSelectionModel().getSelectedItem().toString();
-        JLabel.setDefaultLocale(Locale.forLanguageTag(b));
 
-
-    }
-
-    @FXML
-    void comboobutton(ActionEvent event) {
-        String c = comboo.getSelectionModel().getSelectedItem().toString();
-        JLabel.setDefaultLocale(Locale.forLanguageTag(c));
-
-
-    }
 
     @FXML
     void combooobutton(ActionEvent event) {

@@ -2,21 +2,80 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="659.0" prefWidth="880.0" stylesheets="@styla.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.PetsCheckInController">
    <children>
-      <Label layoutX="47.0" layoutY="17.0" text="Pets Check In Details">
-         <font>
-            <Font name="System Bold" size="32.0" />
-         </font>
-      </Label>
-      <Button layoutX="711.0" layoutY="23.0" mnemonicParsing="false" onAction="#buttonpushed" text="Back to Check In">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Button>
+      <AnchorPane layoutX="33.0" layoutY="117.0" prefHeight="47.0" prefWidth="194.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="6.0" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: #FFFFFF;" text="How many Pets you have ?">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="36.0" layoutY="240.0" prefHeight="47.0" prefWidth="139.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="6.0" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #FFFFFF;" text="Name of Your Pet">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="409.0" layoutY="117.0" prefHeight="47.0" prefWidth="109.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="6.0" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;" text="Any Allergy ?">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="36.0" layoutY="357.0" prefHeight="41.0" prefWidth="48.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="CENTER" layoutX="5.0" layoutY="7.0" prefHeight="27.0" prefWidth="38.0" style="-fx-background-color: #FFFFFF;" text="Tag">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="36.0" layoutY="490.0" prefHeight="47.0" prefWidth="48.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="CENTER" layoutX="5.0" layoutY="6.0" prefHeight="35.0" prefWidth="38.0" style="-fx-background-color: #FFFFFF;" text="Price">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="23.0" layoutY="17.0" prefHeight="57.0" prefWidth="378.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="47.0" prefWidth="363.0" style="-fx-background-color: #FFFFFF;" text="Pets Check In Details">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField layoutX="32.0" layoutY="174.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField layoutX="35.0" layoutY="297.0" prefHeight="27.0" prefWidth="264.0" />
+      <TextField layoutX="31.0" layoutY="419.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField layoutX="35.0" layoutY="552.0" prefHeight="25.0" prefWidth="258.0" />
+      <TextArea layoutX="409.0" layoutY="174.0" prefHeight="107.0" prefWidth="363.0" />
+      <AnchorPane layoutX="696.0" layoutY="18.0" prefHeight="47.0" prefWidth="159.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="5.0" layoutY="6.0" mnemonicParsing="false" onAction="#buttonpushed" text="Back to Check In">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

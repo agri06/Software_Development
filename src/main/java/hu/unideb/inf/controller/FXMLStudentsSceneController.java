@@ -7,6 +7,7 @@ package hu.unideb.inf.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -19,6 +20,9 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+
+import static hu.unideb.inf.MainApp.startDatabase;
+import static hu.unideb.inf.MainApp.stopDatabase;
 
 /**
  * FXML Controller class
@@ -85,12 +89,15 @@ public class FXMLStudentsSceneController implements Initializable {
     }
 
     @FXML
-    public void buttonpushed(ActionEvent event) {
+    public void buttonpushed(ActionEvent event) throws SQLException {
+        startDatabase();
+
         int a = JOptionPane.showConfirmDialog(null,"Do you really want to exit","select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
             System.exit(0);
         }
+        stopDatabase();
 
     }
     @FXML
