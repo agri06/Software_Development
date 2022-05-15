@@ -7,8 +7,12 @@ package hu.unideb.inf.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import hu.unideb.inf.model.AdminData;
+import hu.unideb.inf.model.AdminDataManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,6 +20,9 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+
+import static hu.unideb.inf.MainApp.startDatabase;
+import static hu.unideb.inf.MainApp.stopDatabase;
 
 /**
  * FXML Controller class
@@ -27,6 +34,7 @@ public class FXMLStudentsSceneController implements Initializable {
     public TextField userIDTextField;
     public PasswordField passwordField;
     public CheckBox button4;
+    public AdminDataManager adminDataManager = new AdminDataManager();
 
     private String username = "ashish";
     private String password = "abcd";
@@ -40,26 +48,30 @@ public class FXMLStudentsSceneController implements Initializable {
     @FXML
     void handleButtonPushed(ActionEvent event) {
 
-        if(userIDTextField.getText().equals(username)){
-            if(passwordField.getText().equals(password)){
-               // confirm.setContentText("Login is successful");
-                StageHelper.setScene("/fxml/adminpage.fxml","Welcome Admin");
-               // confirm.show();
+        List<AdminData> adminDataList = adminDataManager.getAllData();
 
+        boolean usernameCheck = false;
+        for (int i = 0; i < adminDataList.size(); i++) {
+            if(adminDataList.get(i).getUsername().equals(userIDTextField.getText())){
 
-            }else{
-                error.setContentText("Password was incorrect!");
-                error.show();
+                usernameCheck = true;
+
+                if(adminDataList.get(i).getPassword().equals(passwordField.getText())){
+                    confirm.setContentText("You've logged in successfully!");
+                    confirm.showAndWait();
+                    StageHelper.setScene("/fxml/adminpage.fxml","Welcome Admin");
+                }
+                else{
+                    error.setContentText("You've entered incorrect password! Please try again!");
+                    error.showAndWait();
+                }
+
             }
-        }else{
-            error.setContentText("Username was incorrect!");
-            error.show();
         }
-
-
-
-
-
+        if(!usernameCheck){
+            error.setContentText("You've entered incorrect username, please try again!");
+            error.showAndWait();
+        }
     }
 
 
@@ -77,12 +89,15 @@ public class FXMLStudentsSceneController implements Initializable {
     }
 
     @FXML
-    public void buttonpushed(ActionEvent event) {
+    public void buttonpushed(ActionEvent event) throws SQLException {
+        startDatabase();
+
         int a = JOptionPane.showConfirmDialog(null,"Do you really want to exit","select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
             System.exit(0);
         }
+        stopDatabase();
 
     }
     @FXML
@@ -96,9 +111,9 @@ public class FXMLStudentsSceneController implements Initializable {
             passwordField.setVisible(true);
         }
 
-
-
-
-
+    }
+    @FXML
+    public void signbuttonpushed(ActionEvent event) {
+        StageHelper.setScene("/fxml/signup.fxml","Sign Up");
     }
 }

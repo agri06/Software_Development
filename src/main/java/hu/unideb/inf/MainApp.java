@@ -13,10 +13,12 @@ import org.h2.tools.Server;
 public class MainApp extends Application {
 
     public static Stage stage;
+    public static Server s= new Server();
 
     @Override
     public void start(Stage stage) throws Exception {
         MainApp.stage = stage;
+
 
 
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/home.fxml"));
@@ -25,8 +27,18 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    public static void startDatabase() throws SQLException {
+        s.runTool("-tcp", "-web", "-ifNotExists");
+    }
 
-    public static void main(String[] args) {
+    public static void stopDatabase()  {
+        s.shutdown();
+    }
+
+    public static void main(String[] args) throws SQLException {
+        startDatabase();
         launch(args);
+        stopDatabase();
+
     }
 }
