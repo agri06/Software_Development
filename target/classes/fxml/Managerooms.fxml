@@ -15,13 +15,13 @@
       <ComboBox fx:id="comb" layoutX="59.0" layoutY="271.0" onAction="#select" prefHeight="25.0" prefWidth="236.0" promptText="Select Room Type" />
       <ComboBox fx:id="combo" layoutX="59.0" layoutY="371.0" onAction="#cselect" prefHeight="25.0" prefWidth="236.0" promptText="Select Bed" />
       <TextField layoutX="59.0" layoutY="474.0" prefHeight="25.0" prefWidth="236.0" />
-      <TableView layoutX="457.0" layoutY="123.0" opacity="0.85" prefHeight="353.0" prefWidth="372.0">
+      <TableView fx:id="roomTableView" layoutX="457.0" layoutY="123.0" opacity="0.85" prefHeight="353.0" prefWidth="372.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Room No." />
-          <TableColumn prefWidth="75.0" text="Room Type" />
-            <TableColumn prefWidth="75.0" text="Bed" />
-            <TableColumn prefWidth="75.0" text="Price" />
-            <TableColumn prefWidth="75.0" text="Status" />
+          <TableColumn fx:id="roomNoTableColumn" prefWidth="75.0" text="Room No." />
+          <TableColumn fx:id="roomTypeTableColumn" prefWidth="75.0" text="Room Type" />
+            <TableColumn fx:id="bedTableColumn" prefWidth="75.0" text="Bed" />
+            <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="statusTableColumn" prefWidth="75.0" text="Status" />
         </columns>
       </TableView>
       <AnchorPane layoutX="58.0" layoutY="137.0" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #000000;">
@@ -62,7 +62,7 @@
       </AnchorPane>
       <AnchorPane layoutX="61.0" layoutY="519.0" prefHeight="57.0" prefWidth="123.0" style="-fx-background-color: #000000;">
          <children>
-            <Button layoutX="13.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Add Room">
+            <Button layoutX="13.0" layoutY="11.0" mnemonicParsing="false" onAction="#onSearchRoom" style="-fx-background-color: #FFFFFF;" text="Search Room">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
