@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import hu.unideb.inf.model.AdminData;
+import hu.unideb.inf.model.AdminDataDAOInterface;
 import hu.unideb.inf.model.AdminDataManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,7 +35,7 @@ public class FXMLStudentsSceneController implements Initializable {
     public TextField userIDTextField;
     public PasswordField passwordField;
     public CheckBox button4;
-    public AdminDataManager adminDataManager = new AdminDataManager();
+    public AdminDataDAOInterface adminDataManager = new AdminDataManager();
 
     private String username = "ashish";
     private String password = "abcd";
@@ -90,12 +91,12 @@ public class FXMLStudentsSceneController implements Initializable {
     }
     @FXML
     public void handlepasswordPushed(ActionEvent actionEvent) throws IOException{
-        StageHelper.setScene("/fxml/forgot.fxml", "Forgot password");
         try {
             adminDataManager.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        StageHelper.setScene("/fxml/forgot.fxml", "Forgot password");
     }
 
     @FXML
@@ -120,11 +121,11 @@ public class FXMLStudentsSceneController implements Initializable {
     }
     @FXML
     public void signbuttonpushed(ActionEvent event) {
-        StageHelper.setScene("/fxml/signup.fxml","Sign Up");
         try {
             adminDataManager.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        StageHelper.setScene("/fxml/signup.fxml","Sign Up");
     }
 }
