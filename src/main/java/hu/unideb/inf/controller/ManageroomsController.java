@@ -1,7 +1,6 @@
 package hu.unideb.inf.controller;
 
 import hu.unideb.inf.RoomAndCustomers.ManageRoomTable;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,10 +34,12 @@ public class ManageroomsController implements Initializable {
     public TableColumn<ManageRoomTable, String> statusTableColumn;
     @FXML
     private ComboBox combo;
+    @FXML
+    private ComboBox comb;
 
     @FXML
     void select(ActionEvent event) {
-        String s = combo.getSelectionModel().getSelectedItem().toString();
+        String s = comb.getSelectionModel().getSelectedItem().toString();
         JLabel.setDefaultLocale(Locale.forLanguageTag(s));
 
     }
@@ -54,7 +55,7 @@ public class ManageroomsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> list = FXCollections.observableArrayList("AC","Non-AC");
-        combo.setItems(list);
+        comb.setItems(list);
 
         ObservableList<String> list1 = FXCollections.observableArrayList("Single","Double","Triple");
         combo.setItems(list1);

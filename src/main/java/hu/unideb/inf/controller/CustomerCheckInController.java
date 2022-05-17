@@ -23,6 +23,8 @@ public class CustomerCheckInController implements Initializable {
 
     @FXML
     private ComboBox combooo;
+    @FXML
+    private ComboBox Combo;
 
 
 
@@ -32,6 +34,8 @@ public class CustomerCheckInController implements Initializable {
         ObservableList<String> list = FXCollections.observableArrayList("Male","Female","Others");
         comb.setItems(list);
 
+        ObservableList<String> list1 = FXCollections.observableArrayList("1","2","3","4");
+        Combo.setItems(list1);
 
 
         ObservableList<String> list3 = FXCollections.observableArrayList();
@@ -66,5 +70,9 @@ public class CustomerCheckInController implements Initializable {
     @FXML
     public void buttonpushed(ActionEvent event) {
         StageHelper.setScene("/fxml/PetsCheckIn.fxml","Pets Check In Details");
+    }
+    @FXML
+    public void ComboButtonPushed(ActionEvent event) {
+
     }
 }
