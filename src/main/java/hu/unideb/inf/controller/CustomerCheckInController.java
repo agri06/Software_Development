@@ -87,4 +87,10 @@ public class CustomerCheckInController implements Initializable {
 
     public void noPetButtonClicked(ActionEvent actionEvent) {
     }
+
+    public void clearButtonClicked(ActionEvent actionEvent) {
+    }
+
+    public void allotRoomButtonClicked(ActionEvent actionEvent) {
+    }
 }
