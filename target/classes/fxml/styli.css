@@ -1,0 +1,5 @@
+.root{
+   -fx-background-image:url('checkou.jpg');
+   -fx-background-size: cover;
+         -fx-background-position: centre;
+}
