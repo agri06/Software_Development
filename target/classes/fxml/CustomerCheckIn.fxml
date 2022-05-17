@@ -100,18 +100,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="426.0" layoutY="423.0" prefHeight="40.0" prefWidth="107.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="426.0" layoutY="423.0" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #000000;">
          <children>
-            <Label alignment="TOP_CENTER" layoutX="6.0" layoutY="7.0" prefHeight="27.0" prefWidth="93.0" style="-fx-background-color: #FFFFFF;" text="Check out" textFill="#1e1e1e">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="821.0" layoutY="130.0" prefHeight="40.0" prefWidth="154.0" style="-fx-background-color: #000000;">
-         <children>
-            <Label alignment="TOP_CENTER" layoutX="7.0" layoutY="8.0" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #FFFFFF;" text="No. of Members" textFill="#141414">
+            <Label alignment="TOP_CENTER" layoutX="6.0" layoutY="7.0" prefHeight="27.0" prefWidth="125.0" style="-fx-background-color: #FFFFFF;" text="Check out Date" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
