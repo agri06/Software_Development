@@ -44,6 +44,11 @@ public class SignupController implements Initializable {
             adminDataManager.setAdminData(adminData);
             signupSuccessful.setContentText("Signup was successful!");
             signupSuccessful.showAndWait();
+            try {
+                adminDataManager.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             StageHelper.setScene("/fxml/FXMLStudentsScene.fxml","Admin Log In");;
         }
         else{
@@ -56,6 +61,11 @@ public class SignupController implements Initializable {
         int a = JOptionPane.showConfirmDialog(null,"Want to go Back?","select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
+            try {
+                adminDataManager.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             StageHelper.setScene("/fxml/FXMLStudentsScene.fxml","Admin Login");
         }
 

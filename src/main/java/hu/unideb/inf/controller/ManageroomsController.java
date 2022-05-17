@@ -67,6 +67,11 @@ public class ManageroomsController implements Initializable {
         int a = JOptionPane.showConfirmDialog(null,"Want to go Back?","select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
+            try {
+                rdm.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
         }
 
