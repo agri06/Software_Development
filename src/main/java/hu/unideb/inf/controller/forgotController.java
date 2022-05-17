@@ -39,6 +39,12 @@ public class forgotController implements Initializable {
     @FXML
     public void onbackbutton(ActionEvent event) {
         StageHelper.setScene("/fxml/FXMLStudentsScene.fxml","Admin Login");
+
+        try {
+            dataManager.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void saveButtonClicked(ActionEvent actionEvent) {
@@ -92,6 +98,11 @@ public class forgotController implements Initializable {
         else{
             confirm.setContentText("Password updated successfully!");
             confirm.showAndWait();
+            try {
+                dataManager.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             StageHelper.setScene("/fxml/FXMLStudentsScene.fxml","Admin Login");
         }
     }

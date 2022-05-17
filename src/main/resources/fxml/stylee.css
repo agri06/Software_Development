@@ -1,6 +1,6 @@
 .root{
    -fx-background-image:url('homee.jpg');
    -fx-background-size: cover;
-         -fx-background-position: centre;
+         -fx-background-position: center;
 
 }
