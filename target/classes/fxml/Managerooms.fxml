@@ -5,35 +5,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="599.0" prefWidth="874.0" stylesheets="@styl.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.ManageroomsController">
    <children>
-      <TextField layoutX="59.0" layoutY="181.0" prefHeight="25.0" prefWidth="236.0" />
-      <ComboBox fx:id="comb" layoutX="59.0" layoutY="271.0" onAction="#select" prefHeight="25.0" prefWidth="236.0" promptText="Select Room Type" />
-      <ComboBox fx:id="combo" layoutX="59.0" layoutY="371.0" onAction="#cselect" prefHeight="25.0" prefWidth="236.0" promptText="Select Bed" />
-      <TextField layoutX="59.0" layoutY="474.0" prefHeight="25.0" prefWidth="236.0" />
-      <TableView fx:id="roomTableView" layoutX="457.0" layoutY="123.0" opacity="0.85" prefHeight="353.0" prefWidth="372.0">
-        <columns>
-          <TableColumn fx:id="roomNoTableColumn" prefWidth="75.0" text="Room No." />
-          <TableColumn fx:id="roomTypeTableColumn" prefWidth="75.0" text="Room Type" />
-            <TableColumn fx:id="bedTableColumn" prefWidth="75.0" text="Bed" />
-            <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
-            <TableColumn fx:id="statusTableColumn" prefWidth="75.0" text="Status" />
-        </columns>
-      </TableView>
-      <AnchorPane layoutX="58.0" layoutY="137.0" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #000000;">
-         <children>
-            <Label layoutX="7.0" layoutY="8.0" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #FFFFFF;" text="Room Number" textFill="#252525">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="57.0" layoutY="231.0" prefHeight="35.0" prefWidth="103.0" style="-fx-background-color: #000000;">
+      <ComboBox fx:id="comb" layoutX="58.0" layoutY="226.0" onAction="#select" prefHeight="25.0" prefWidth="236.0" promptText="Select Room Type" />
+      <ComboBox fx:id="combo" layoutX="59.0" layoutY="363.0" onAction="#cselect" prefHeight="25.0" prefWidth="236.0" promptText="Select Bed" />
+      <AnchorPane layoutX="57.0" layoutY="174.0" prefHeight="35.0" prefWidth="103.0" style="-fx-background-color: #000000;">
          <children>
             <Label layoutX="8.0" layoutY="8.0" prefHeight="20.0" prefWidth="87.0" style="-fx-background-color: #FFFFFF;" text="Room Type">
                <font>
@@ -42,18 +21,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="56.0" layoutY="327.0" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="56.0" layoutY="305.0" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #000000;">
          <children>
             <Label layoutX="8.0" layoutY="8.0" prefHeight="20.0" prefWidth="43.0" style="-fx-background-color: #FFFFFF;" text="Bed">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="61.0" layoutY="428.0" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #000000;">
-         <children>
-            <Label layoutX="8.0" layoutY="8.0" prefHeight="20.0" prefWidth="43.0" style="-fx-background-color: #FFFFFF;" text="Price">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -81,6 +51,19 @@
       <AnchorPane layoutX="686.0" layoutY="25.0" prefHeight="43.0" prefWidth="143.0" style="-fx-background-color: #000000;">
          <children>
             <Button layoutX="10.0" layoutY="9.0" mnemonicParsing="false" onAction="#backbuttonpushed" text="Back to Admin Page" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="389.0" layoutY="107.0" prefHeight="429.0" prefWidth="407.0" style="-fx-background-color: #000000;">
+         <children>
+            <TableView fx:id="roomTableView" layoutX="14.0" layoutY="15.0" opacity="0.85" prefHeight="401.0" prefWidth="378.0">
+              <columns>
+                <TableColumn fx:id="roomNoTableColumn" prefWidth="75.0" text="Room No." />
+                <TableColumn fx:id="roomTypeTableColumn" prefWidth="75.0" text="Room Type" />
+                  <TableColumn fx:id="bedTableColumn" prefWidth="75.0" text="Bed" />
+                  <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
+                  <TableColumn fx:id="statusTableColumn" prefWidth="75.0" text="Status" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>
