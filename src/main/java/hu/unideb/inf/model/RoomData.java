@@ -20,6 +20,15 @@ public class RoomData {
     @Basic(optional = false)
     private String status;
 
+    public RoomData(int id, String roomNo, String roomType, String bed, String price, String status) {
+        Id = id;
+        this.roomNo = roomNo;
+        this.roomType = roomType;
+        this.bed = bed;
+        this.price = price;
+        this.status = status;
+    }
+
     public RoomData() {
     }
 

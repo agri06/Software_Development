@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import hu.unideb.inf.model.AdminData;
+import hu.unideb.inf.model.AdminDataDAOInterface;
 import hu.unideb.inf.model.AdminDataManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,7 +35,7 @@ public class FXMLStudentsSceneController implements Initializable {
     public TextField userIDTextField;
     public PasswordField passwordField;
     public CheckBox button4;
-    public AdminDataManager adminDataManager = new AdminDataManager();
+    public AdminDataDAOInterface adminDataManager = new AdminDataManager();
 
     private String username = "ashish";
     private String password = "abcd";
@@ -59,6 +60,11 @@ public class FXMLStudentsSceneController implements Initializable {
                 if(adminDataList.get(i).getPassword().equals(passwordField.getText())){
                     confirm.setContentText("You've logged in successfully!");
                     confirm.showAndWait();
+                    try {
+                        adminDataManager.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     StageHelper.setScene("/fxml/adminpage.fxml","Welcome Admin");
                 }
                 else{
@@ -85,13 +91,16 @@ public class FXMLStudentsSceneController implements Initializable {
     }
     @FXML
     public void handlepasswordPushed(ActionEvent actionEvent) throws IOException{
+        try {
+            adminDataManager.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         StageHelper.setScene("/fxml/forgot.fxml", "Forgot password");
     }
 
     @FXML
     public void buttonpushed(ActionEvent event) throws SQLException {
-        startDatabase();
-
         int a = JOptionPane.showConfirmDialog(null,"Do you really want to exit","select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
@@ -104,8 +113,6 @@ public class FXMLStudentsSceneController implements Initializable {
     public void buttonpressed(ActionEvent event) {
         if(button4.isSelected()){
             passwordField.setVisible(false);
-
-
         }
         else{
             passwordField.setVisible(true);
@@ -114,6 +121,11 @@ public class FXMLStudentsSceneController implements Initializable {
     }
     @FXML
     public void signbuttonpushed(ActionEvent event) {
+        try {
+            adminDataManager.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         StageHelper.setScene("/fxml/signup.fxml","Sign Up");
     }
 }

@@ -3,6 +3,8 @@
   <persistence-unit name="hotelManagement">
     <description>Hibernate EntityManager Demo</description>
     <class>hu.unideb.inf.model.AdminData</class>
+    <class>hu.unideb.inf.model.RoomData</class>
+    <class>hu.unideb.inf.model.CustomerData</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
