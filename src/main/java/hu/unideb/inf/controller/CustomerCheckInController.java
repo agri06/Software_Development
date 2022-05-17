@@ -67,12 +67,24 @@ public class CustomerCheckInController implements Initializable {
             StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
         }
     }
-    @FXML
-    public void buttonpushed(ActionEvent event) {
-        StageHelper.setScene("/fxml/PetsCheckIn.fxml","Pets Check In Details");
-    }
+    
     @FXML
     public void ComboButtonPushed(ActionEvent event) {
 
+    }
+
+    public void yesPetButton(ActionEvent actionEvent) {
+    }
+
+    public void noPetButton(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void yesPetButtonClicked(ActionEvent actionEvent) {
+        StageHelper.setScene("/fxml/PetsCheckIn.fxml","Pets Check In Details");
+
+    }
+
+    public void noPetButtonClicked(ActionEvent actionEvent) {
     }
 }
