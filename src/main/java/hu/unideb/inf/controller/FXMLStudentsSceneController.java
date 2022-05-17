@@ -59,6 +59,11 @@ public class FXMLStudentsSceneController implements Initializable {
                 if(adminDataList.get(i).getPassword().equals(passwordField.getText())){
                     confirm.setContentText("You've logged in successfully!");
                     confirm.showAndWait();
+                    try {
+                        adminDataManager.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     StageHelper.setScene("/fxml/adminpage.fxml","Welcome Admin");
                 }
                 else{
@@ -86,12 +91,15 @@ public class FXMLStudentsSceneController implements Initializable {
     @FXML
     public void handlepasswordPushed(ActionEvent actionEvent) throws IOException{
         StageHelper.setScene("/fxml/forgot.fxml", "Forgot password");
+        try {
+            adminDataManager.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void buttonpushed(ActionEvent event) throws SQLException {
-        startDatabase();
-
         int a = JOptionPane.showConfirmDialog(null,"Do you really want to exit","select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
@@ -104,8 +112,6 @@ public class FXMLStudentsSceneController implements Initializable {
     public void buttonpressed(ActionEvent event) {
         if(button4.isSelected()){
             passwordField.setVisible(false);
-
-
         }
         else{
             passwordField.setVisible(true);
@@ -115,5 +121,10 @@ public class FXMLStudentsSceneController implements Initializable {
     @FXML
     public void signbuttonpushed(ActionEvent event) {
         StageHelper.setScene("/fxml/signup.fxml","Sign Up");
+        try {
+            adminDataManager.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

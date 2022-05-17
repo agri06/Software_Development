@@ -32,8 +32,6 @@ public class adminpageController implements Initializable {
     }
     @FXML
     public void exitbuttonpushed(ActionEvent event) throws SQLException {
-
-        startDatabase();
         int a = JOptionPane.showConfirmDialog(null,"Do you really want to exit","select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {

@@ -1,6 +1,8 @@
 package hu.unideb.inf.controller;
 
-import hu.unideb.inf.RoomAndCustomers.ManageRoomTable;
+import hu.unideb.inf.model.RoomData;
+import hu.unideb.inf.model.RoomDataDAOInterface;
+import hu.unideb.inf.model.RoomDataManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,20 +20,22 @@ import java.util.ResourceBundle;
 
 public class ManageroomsController implements Initializable {
 
+    RoomDataDAOInterface rdm = new RoomDataManager();
+    ObservableList<RoomData> roomDataObservableList;
     @FXML
     public TableView roomTableView;
 
     @FXML
-    public TableColumn<ManageRoomTable, String> roomNoTableColumn;
+    public TableColumn<RoomData, String> roomNoTableColumn;
 
     @FXML
-    public TableColumn<ManageRoomTable, String> roomTypeTableColumn;
+    public TableColumn<RoomData, String> roomTypeTableColumn;
     @FXML
-    public TableColumn<ManageRoomTable, String> bedTableColumn;
+    public TableColumn<RoomData, String> bedTableColumn;
     @FXML
-    public TableColumn<ManageRoomTable, String> priceTableColumn;
+    public TableColumn<RoomData, String> priceTableColumn;
     @FXML
-    public TableColumn<ManageRoomTable, String> statusTableColumn;
+    public TableColumn<RoomData, String> statusTableColumn;
     @FXML
     private ComboBox combo;
     @FXML
@@ -65,6 +69,9 @@ public class ManageroomsController implements Initializable {
         bedTableColumn.setCellValueFactory(new PropertyValueFactory<>("Bed"));
         priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("Price"));
         statusTableColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        
+        roomDataObservableList = FXCollections.observableArrayList(rdm.getAllRoomData());
+        roomTableView.setItems(roomDataObservableList);
     }
     @FXML
     public void backbuttonpushed(ActionEvent event) {
@@ -77,11 +84,6 @@ public class ManageroomsController implements Initializable {
     }
 
     public void onSearchRoom(ActionEvent actionEvent) {
-        roomTableView.setItems(manageRoomTableObservableList);
-        
-    }
 
-    private ObservableList<ManageRoomTable> manageRoomTableObservableList = FXCollections.observableArrayList(
-            new ManageRoomTable("101","AC","3","400","booked")
-            );
+    }
 }
