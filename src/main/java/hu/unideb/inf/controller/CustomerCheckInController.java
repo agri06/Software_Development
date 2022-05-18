@@ -17,13 +17,13 @@ import java.util.ResourceBundle;
 
 public class CustomerCheckInController implements Initializable {
     CustomerDataDAOInterface customerDataManager = new CustomerDataManager();
+    RoomDataDAOInterface roomDataManager = new RoomDataManager();
     @FXML
     private ComboBox comb;
     @FXML
     private ComboBox combooo;
     @FXML
     private ComboBox Combo;
-
     @FXML
     private TextField nameTextField;
     @FXML
@@ -53,8 +53,6 @@ public class CustomerCheckInController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> list = FXCollections.observableArrayList("Male","Female","Others");
         comb.setItems(list);
-
-
     }
 
     public void allotRoomButtonClicked(ActionEvent actionEvent) {
@@ -73,7 +71,6 @@ public class CustomerCheckInController implements Initializable {
         customerData.setPrice(priceTextField.getText());
 
         customerDataManager.setCustomerData(customerData);
-        RoomDataDAOInterface roomDataManager = new RoomDataManager();
         List<RoomData> rooms =roomDataManager.getAllRoomData();
 
         for (RoomData room: rooms) {
@@ -83,17 +80,33 @@ public class CustomerCheckInController implements Initializable {
                 break;
             }
         }
-        try {
-            roomDataManager.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
 
     }
 
+    public void getEstimatedPriceButtonClicked(ActionEvent actionEvent) {
+        List<RoomData> rooms = roomDataManager.getAllRoomData();
+        for (RoomData room: rooms) {
+            if(room.getRoomNo().equals(roomNumberTextField.getText())){
+                priceTextField.setText(room.getPrice());
+                break;
+            }
+        }
+    }
+
     public void clearButtonClicked(ActionEvent actionEvent) {
+        nameTextField.setText("");
+        mobileNumberTextField.setText("");
+        nationalityTextField.setText("");
+        emailTextField.setText("");
+        idProofTextField.setText("");
+        addressTextField.setText("");
+        checkInDateTextField.setText("");
+        numberOfDaysTextField.setText("");
+        roomNumberTextField.setText("");
+        petTagTextField.setText("");
+        priceTextField.setText("");
     }
 
     @FXML
@@ -106,6 +119,7 @@ public class CustomerCheckInController implements Initializable {
 
         try {
             customerDataManager.close();
+            roomDataManager.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -113,9 +127,6 @@ public class CustomerCheckInController implements Initializable {
     
     @FXML
     public void ComboButtonPushed(ActionEvent event) {
-    }
-
-    public void noPetButtonClicked(ActionEvent actionEvent) {
     }
 
     public void combooobutton(ActionEvent actionEvent) {

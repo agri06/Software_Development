@@ -83,7 +83,7 @@ public class CustomercheckoutController implements Initializable {
     public void searchButtonClicked(ActionEvent actionEvent) {
         List<CustomerData> customerDataList = customerDataManager.getAllCustomerData();
         List<CustomerData> newList = customerDataList.stream()
-                .filter(customerData -> customerData.getName().equals(customerNameTextBox))
+                .filter(customerData -> customerData.getName().startsWith(customerNameTextBox.getText()))
                 .collect(Collectors.toList());
 
         customerDataObservableList = FXCollections.observableArrayList(newList);
