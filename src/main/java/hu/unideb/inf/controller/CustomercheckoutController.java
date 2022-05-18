@@ -1,9 +1,6 @@
 package hu.unideb.inf.controller;
 
-import hu.unideb.inf.model.CustomerData;
-import hu.unideb.inf.model.CustomerDataDAOInterface;
-import hu.unideb.inf.model.CustomerDataManager;
-import hu.unideb.inf.model.RoomData;
+import hu.unideb.inf.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -43,6 +40,8 @@ public class CustomercheckoutController implements Initializable {
     public TextField customerIdTextBox;
 
     CustomerDataDAOInterface customerDataManager = new CustomerDataManager();
+    BillDataDAOInterface billDataManager = new BillDataManager();
+    RoomDataDAOInterface roomDataManager = new RoomDataManager();
     ObservableList<CustomerData> customerDataObservableList;
 
     @Override
@@ -76,11 +75,36 @@ public class CustomercheckoutController implements Initializable {
         List<CustomerData> customerDataList = customerDataManager.getAllCustomerData();
         for (CustomerData customerData: customerDataList) {
             if(customerData.getId() == Integer.parseInt(customerIdTextBox.getText())){
-                //generate bill
+                //generating Bill
+                BillData billData = new BillData();
+                billData.setName(customerData.getName());
+                billData.setIdProof(customerData.getIdProof());
+                billData.setAddress(customerData.getAddress());
+                billData.setCheckInDate(customerData.getCheckInDate());
+                billData.setNumberOfDays(customerData.getNumberOfDays());
+                billData.setPetTag(customerData.getPetTag());
+                billData.setPrice(customerData.getPrice());
+
+                billDataManager.setBillData(billData);
                 //make room available
+                List<RoomData> rooms = roomDataManager.getAllRoomData();
+                for (RoomData room: rooms) {
+                    if(room.getRoomNo().equals(customerData.getRoomNumber())){
+                        room.setStatus("AVAILABLE");
+                        break;
+                    }
+                }
                 //delete customerData
+                customerDataManager.deleteCustomerData(customerData);
+                confirm.setContentText("Customer checked out successfully!\nBIll ID: "+billData.getId());
+                confirm.showAndWait();
+
+                StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
+                break;
             }
         }
+
+
     }
 
 
