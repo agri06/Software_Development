@@ -114,7 +114,7 @@ public class CustomerCheckInController implements Initializable {
             if(room.getRoomNo().equals(roomNumberTextField.getText())){
                 int price = Integer.parseInt(room.getPrice())*Integer.parseInt(numberOfDaysTextField.getText());
                 if (!petTagTextField.getText().equals("") && !petTagTextField.getText().toLowerCase().equals("null")) {
-                    price += 3000;
+                    price += 2000;
                 }
                 priceTextField.setText(price+"");
                 break;

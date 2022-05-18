@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -23,6 +24,8 @@ import java.util.stream.Collectors;
 
 public class CustomercheckoutController implements Initializable {
 
+    Alert warn = new Alert(Alert.AlertType.WARNING);
+    Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
     public TextField customerNameTextBox;
     public TableView customerTableView;
     public TableColumn<CustomerData, String> idTableColumn;
@@ -63,23 +66,27 @@ public class CustomercheckoutController implements Initializable {
     }
 
     public void checkOutButtonClicked(ActionEvent actionEvent) {
-        //get customerId, Generate bill in billDataBase
-        //Delete customer from CustomerData
-        //make the room available
-    }
 
-    @FXML
-    public void handlepushed(ActionEvent event) {
-        int a = JOptionPane.showConfirmDialog(null,"Want to go Back?","select",JOptionPane.YES_NO_OPTION);
-        if(a==0)
-        {
-            StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
+        if(customerIdTextBox.getText().equals("")){
+            warn.setContentText("Please enter a customer ID to check out!");
+            warn.showAndWait();
+            return;
         }
 
-
+        List<CustomerData> customerDataList = customerDataManager.getAllCustomerData();
+        for (CustomerData customerData: customerDataList) {
+            if(customerData.getId() == Integer.parseInt(customerIdTextBox.getText())){
+                //generate bill
+                //make room available
+                //delete customerData
+            }
+        }
     }
 
+
     public void clearButtonClicked(ActionEvent actionEvent) {
+        customerNameTextBox.setText("");
+        customerIdTextBox.setText("");
     }
 
 
@@ -91,5 +98,16 @@ public class CustomercheckoutController implements Initializable {
 
         customerDataObservableList = FXCollections.observableArrayList(newList);
         customerTableView.setItems(customerDataObservableList);
+    }
+
+    @FXML
+    public void handlepushed(ActionEvent event) {
+        int a = JOptionPane.showConfirmDialog(null,"Want to go Back?","select",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
+        }
+
+
     }
 }
