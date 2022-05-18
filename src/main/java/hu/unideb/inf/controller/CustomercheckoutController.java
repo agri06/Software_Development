@@ -17,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.*;
 import java.net.URL;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -63,6 +64,8 @@ public class CustomercheckoutController implements Initializable {
 
     public void checkOutButtonClicked(ActionEvent actionEvent) {
         //get customerId, Generate bill in billDataBase
+        //Delete customer from CustomerData
+        //make the room available
     }
 
     @FXML
@@ -83,7 +86,7 @@ public class CustomercheckoutController implements Initializable {
     public void searchButtonClicked(ActionEvent actionEvent) {
         List<CustomerData> customerDataList = customerDataManager.getAllCustomerData();
         List<CustomerData> newList = customerDataList.stream()
-                .filter(customerData -> customerData.getName().startsWith(customerNameTextBox.getText()))
+                .filter(customerData -> customerData.getName().toLowerCase().startsWith(customerNameTextBox.getText().toLowerCase()))
                 .collect(Collectors.toList());
 
         customerDataObservableList = FXCollections.observableArrayList(newList);

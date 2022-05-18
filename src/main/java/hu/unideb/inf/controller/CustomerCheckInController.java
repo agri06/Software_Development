@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -18,6 +19,8 @@ import java.util.ResourceBundle;
 public class CustomerCheckInController implements Initializable {
     CustomerDataDAOInterface customerDataManager = new CustomerDataManager();
     RoomDataDAOInterface roomDataManager = new RoomDataManager();
+    Alert warn = new Alert(Alert.AlertType.WARNING);
+    Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
     @FXML
     private ComboBox comb;
     @FXML
@@ -75,21 +78,45 @@ public class CustomerCheckInController implements Initializable {
 
         for (RoomData room: rooms) {
             if(room.getRoomNo().equals(roomNumberTextField.getText())){
-                room.setStatus("BOOKED");
-                roomDataManager.setRoomData(room);
+                if(room.getStatus().equals("AVAILABLE")) {
+                    room.setStatus("BOOKED");
+                    roomDataManager.setRoomData(room);
+                }
+                else{
+                    warn.setContentText("Please choose an available Room!");
+                    warn.showAndWait();
+                }
                 break;
             }
         }
 
+        confirm.setContentText("Room Allotment Successful!");
+        confirm.showAndWait();
         StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
 
     }
 
     public void getEstimatedPriceButtonClicked(ActionEvent actionEvent) {
+        if(roomNumberTextField.getText().equals(null)){
+            warn.setContentText("Please enter correct room number!");
+            warn.showAndWait();
+            return;
+        }
+
+        if(numberOfDaysTextField.getText().equals(null)){
+            warn.setContentText("Please enter correct number of days!");
+            warn.showAndWait();
+            return;
+        }
+
         List<RoomData> rooms = roomDataManager.getAllRoomData();
         for (RoomData room: rooms) {
             if(room.getRoomNo().equals(roomNumberTextField.getText())){
-                priceTextField.setText(room.getPrice());
+                int price = Integer.parseInt(room.getPrice())*Integer.parseInt(numberOfDaysTextField.getText());
+                if (!petTagTextField.getText().equals("") && !petTagTextField.getText().toLowerCase().equals("null")) {
+                    price += 3000;
+                }
+                priceTextField.setText(price+"");
                 break;
             }
         }
