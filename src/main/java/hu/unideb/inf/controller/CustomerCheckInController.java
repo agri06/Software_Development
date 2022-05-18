@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -17,13 +18,15 @@ import java.util.ResourceBundle;
 
 public class CustomerCheckInController implements Initializable {
     CustomerDataDAOInterface customerDataManager = new CustomerDataManager();
+    RoomDataDAOInterface roomDataManager = new RoomDataManager();
+    Alert warn = new Alert(Alert.AlertType.WARNING);
+    Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
     @FXML
     private ComboBox comb;
     @FXML
     private ComboBox combooo;
     @FXML
     private ComboBox Combo;
-
     @FXML
     private TextField nameTextField;
     @FXML
@@ -53,8 +56,6 @@ public class CustomerCheckInController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> list = FXCollections.observableArrayList("Male","Female","Others");
         comb.setItems(list);
-
-
     }
 
     public void allotRoomButtonClicked(ActionEvent actionEvent) {
@@ -73,27 +74,66 @@ public class CustomerCheckInController implements Initializable {
         customerData.setPrice(priceTextField.getText());
 
         customerDataManager.setCustomerData(customerData);
-        RoomDataDAOInterface roomDataManager = new RoomDataManager();
         List<RoomData> rooms =roomDataManager.getAllRoomData();
 
         for (RoomData room: rooms) {
             if(room.getRoomNo().equals(roomNumberTextField.getText())){
-                room.setStatus("BOOKED");
-                roomDataManager.setRoomData(room);
+                if(room.getStatus().equals("AVAILABLE")) {
+                    room.setStatus("BOOKED");
+                    roomDataManager.setRoomData(room);
+                }
+                else{
+                    warn.setContentText("Please choose an available Room!");
+                    warn.showAndWait();
+                }
                 break;
             }
         }
-        try {
-            roomDataManager.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
+        confirm.setContentText("Room Allotment Successful!");
+        confirm.showAndWait();
         StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
 
     }
 
+    public void getEstimatedPriceButtonClicked(ActionEvent actionEvent) {
+        if(roomNumberTextField.getText().equals(null)){
+            warn.setContentText("Please enter correct room number!");
+            warn.showAndWait();
+            return;
+        }
+
+        if(numberOfDaysTextField.getText().equals(null)){
+            warn.setContentText("Please enter correct number of days!");
+            warn.showAndWait();
+            return;
+        }
+
+        List<RoomData> rooms = roomDataManager.getAllRoomData();
+        for (RoomData room: rooms) {
+            if(room.getRoomNo().equals(roomNumberTextField.getText())){
+                int price = Integer.parseInt(room.getPrice())*Integer.parseInt(numberOfDaysTextField.getText());
+                if (!petTagTextField.getText().equals("") && !petTagTextField.getText().toLowerCase().equals("null")) {
+                    price += 2000;
+                }
+                priceTextField.setText(price+"");
+                break;
+            }
+        }
+    }
+
     public void clearButtonClicked(ActionEvent actionEvent) {
+        nameTextField.setText("");
+        mobileNumberTextField.setText("");
+        nationalityTextField.setText("");
+        emailTextField.setText("");
+        idProofTextField.setText("");
+        addressTextField.setText("");
+        checkInDateTextField.setText("");
+        numberOfDaysTextField.setText("");
+        roomNumberTextField.setText("");
+        petTagTextField.setText("");
+        priceTextField.setText("");
     }
 
     @FXML
@@ -106,6 +146,7 @@ public class CustomerCheckInController implements Initializable {
 
         try {
             customerDataManager.close();
+            roomDataManager.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -113,9 +154,6 @@ public class CustomerCheckInController implements Initializable {
     
     @FXML
     public void ComboButtonPushed(ActionEvent event) {
-    }
-
-    public void noPetButtonClicked(ActionEvent actionEvent) {
     }
 
     public void combooobutton(ActionEvent actionEvent) {
