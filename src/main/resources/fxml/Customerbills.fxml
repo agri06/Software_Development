@@ -10,10 +10,10 @@
 
 <AnchorPane prefHeight="671.0" prefWidth="936.0" stylesheets="@stylii.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.CustomerbillsController">
    <children>
-      <TextField layoutX="406.0" layoutY="180.0" prefHeight="25.0" prefWidth="170.0" />
-      <AnchorPane layoutX="144.0" layoutY="172.0" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #000000;">
+      <TextField fx:id="searchNameTextField" layoutX="305.0" layoutY="179.0" prefHeight="25.0" prefWidth="170.0" />
+      <AnchorPane layoutX="144.0" layoutY="172.0" prefHeight="40.0" prefWidth="138.0" style="-fx-background-color: #000000;">
          <children>
-            <Label alignment="CENTER" layoutX="4.0" layoutY="7.0" style="-fx-background-color: #FFFF;" text="Search by Check Out Details" textFill="#1a1a1b">
+            <Label alignment="CENTER" layoutX="4.0" layoutY="7.0" style="-fx-background-color: #FFFF;" text="Search by Name" textFill="#1a1a1b">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
@@ -34,23 +34,48 @@
             <Button layoutX="6.0" layoutY="7.0" mnemonicParsing="false" onAction="#handlebutton" text="Back to Admin Page" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="642.0" layoutY="132.0" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="497.0" layoutY="172.0" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #000000;">
          <children>
-            <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" text="Search">
+            <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#searchByNameButtonClicked" text="Search">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="204.0" layoutY="290.0" prefHeight="304.0" prefWidth="305.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="13.0" layoutY="290.0" prefHeight="304.0" prefWidth="909.0" style="-fx-background-color: #000000;">
          <children>
-            <TableView layoutX="25.0" layoutY="22.0" prefHeight="250.0" prefWidth="258.0">
+            <TableView fx:id="billTableView" layoutX="17.0" layoutY="22.0" prefHeight="266.0" prefWidth="875.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="idTableColumn" prefWidth="75.0" text="Bill ID" />
+                <TableColumn fx:id="nameTableColumn" prefWidth="116.79998779296875" text="Name" />
+                  <TableColumn fx:id="idProofTableColumn" prefWidth="85.60005187988281" text="ID Proof" />
+                  <TableColumn fx:id="addressTableColumn" prefWidth="153.5999755859375" text="Address" />
+                  <TableColumn fx:id="checkInDateTableColumn" prefWidth="112.0" text="check In Date" />
+                  <TableColumn fx:id="numberOfDaysTableColumn" minWidth="2.4000244140625" prefWidth="115.99993896484375" text="number Of Days" />
+                  <TableColumn fx:id="petTagTableColumn" prefWidth="97.60003662109375" text="Pet Tag" />
+                  <TableColumn fx:id="priceTableColumn" minWidth="0.0" prefWidth="118.39996337890625" text="Price" />
               </columns>
             </TableView>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="searchIdTextField" layoutX="305.0" layoutY="235.0" prefHeight="25.0" prefWidth="170.0" />
+      <AnchorPane layoutX="171.0" layoutY="228.0" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="CENTER" layoutX="4.0" layoutY="7.0" style="-fx-background-color: #FFFF;" text="Search By ID" textFill="#1a1a1b">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="497.0" layoutY="228.0" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#searchByIdButtonClicked" text="Search">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

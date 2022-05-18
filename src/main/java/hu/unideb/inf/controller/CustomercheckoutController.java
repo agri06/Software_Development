@@ -1,14 +1,12 @@
 package hu.unideb.inf.controller;
 
-import hu.unideb.inf.model.CustomerData;
-import hu.unideb.inf.model.CustomerDataDAOInterface;
-import hu.unideb.inf.model.CustomerDataManager;
-import hu.unideb.inf.model.RoomData;
+import hu.unideb.inf.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -17,11 +15,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.*;
 import java.net.URL;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 public class CustomercheckoutController implements Initializable {
 
+    Alert warn = new Alert(Alert.AlertType.WARNING);
+    Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
     public TextField customerNameTextBox;
     public TableView customerTableView;
     public TableColumn<CustomerData, String> idTableColumn;
@@ -39,6 +40,8 @@ public class CustomercheckoutController implements Initializable {
     public TextField customerIdTextBox;
 
     CustomerDataDAOInterface customerDataManager = new CustomerDataManager();
+    BillDataDAOInterface billDataManager = new BillDataManager();
+    RoomDataDAOInterface roomDataManager = new RoomDataManager();
     ObservableList<CustomerData> customerDataObservableList;
 
     @Override
@@ -62,7 +65,63 @@ public class CustomercheckoutController implements Initializable {
     }
 
     public void checkOutButtonClicked(ActionEvent actionEvent) {
-        //get customerId, Generate bill in billDataBase
+
+        if(customerIdTextBox.getText().equals("")){
+            warn.setContentText("Please enter a customer ID to check out!");
+            warn.showAndWait();
+            return;
+        }
+
+        List<CustomerData> customerDataList = customerDataManager.getAllCustomerData();
+        for (CustomerData customerData: customerDataList) {
+            if(customerData.getId() == Integer.parseInt(customerIdTextBox.getText())){
+                //generating Bill
+                BillData billData = new BillData();
+                billData.setName(customerData.getName());
+                billData.setIdProof(customerData.getIdProof());
+                billData.setAddress(customerData.getAddress());
+                billData.setCheckInDate(customerData.getCheckInDate());
+                billData.setNumberOfDays(customerData.getNumberOfDays());
+                billData.setPetTag(customerData.getPetTag());
+                billData.setPrice(customerData.getPrice());
+
+                billDataManager.setBillData(billData);
+                //make room available
+                List<RoomData> rooms = roomDataManager.getAllRoomData();
+                for (RoomData room: rooms) {
+                    if(room.getRoomNo().equals(customerData.getRoomNumber())){
+                        room.setStatus("AVAILABLE");
+                        break;
+                    }
+                }
+                //delete customerData
+                customerDataManager.deleteCustomerData(customerData);
+                confirm.setContentText("Customer checked out successfully!\nBIll ID: "+billData.getId());
+                confirm.showAndWait();
+
+                StageHelper.setScene("/fxml/adminpage.fxml","Admin Page");
+                break;
+            }
+        }
+
+
+    }
+
+
+    public void clearButtonClicked(ActionEvent actionEvent) {
+        customerNameTextBox.setText("");
+        customerIdTextBox.setText("");
+    }
+
+
+    public void searchButtonClicked(ActionEvent actionEvent) {
+        List<CustomerData> customerDataList = customerDataManager.getAllCustomerData();
+        List<CustomerData> newList = customerDataList.stream()
+                .filter(customerData -> customerData.getName().toLowerCase().startsWith(customerNameTextBox.getText().toLowerCase()))
+                .collect(Collectors.toList());
+
+        customerDataObservableList = FXCollections.observableArrayList(newList);
+        customerTableView.setItems(customerDataObservableList);
     }
 
     @FXML
@@ -74,19 +133,5 @@ public class CustomercheckoutController implements Initializable {
         }
 
 
-    }
-
-    public void clearButtonClicked(ActionEvent actionEvent) {
-    }
-
-
-    public void searchButtonClicked(ActionEvent actionEvent) {
-        List<CustomerData> customerDataList = customerDataManager.getAllCustomerData();
-        List<CustomerData> newList = customerDataList.stream()
-                .filter(customerData -> customerData.getName().equals(customerNameTextBox))
-                .collect(Collectors.toList());
-
-        customerDataObservableList = FXCollections.observableArrayList(newList);
-        customerTableView.setItems(customerDataObservableList);
     }
 }
