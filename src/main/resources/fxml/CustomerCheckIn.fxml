@@ -18,7 +18,7 @@
       <TextField fx:id="addressTextField" layoutX="428.0" layoutY="275.0" prefHeight="25.0" prefWidth="264.0" />
       <TextField fx:id="checkInDateTextField" layoutX="428.0" layoutY="371.0" prefHeight="25.0" prefWidth="264.0" />
       <ComboBox fx:id="combooo" disable="true" layoutX="824.0" layoutY="275.0" onAction="#combooobutton" prefHeight="25.0" prefWidth="245.0" visible="false" />
-      <TextField fx:id="priceTextField" layoutX="829.0" layoutY="468.0" prefHeight="25.0" prefWidth="245.0" />
+      <TextField fx:id="priceTextField" editable="false" layoutX="829.0" layoutY="468.0" prefHeight="26.0" prefWidth="264.0" />
       <AnchorPane layoutX="82.0" layoutY="130.0" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #000000;">
          <children>
             <Label alignment="TOP_CENTER" layoutX="4.0" layoutY="7.0" opacity="0.88" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: #FFFFFF;" text="Name" textFill="#0a0a0a">
@@ -100,7 +100,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="824.0" layoutY="228.0" prefHeight="40.0" prefWidth="93.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="823.0" layoutY="130.0" prefHeight="40.0" prefWidth="93.0" style="-fx-background-color: #000000;">
          <children>
             <Label alignment="TOP_CENTER" layoutX="7.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #FFFFFF;" text="Room No." textFill="#222121">
                <font>
@@ -133,7 +133,7 @@
          </children>
       </AnchorPane>
       <TextField fx:id="numberOfDaysTextField" layoutX="428.0" layoutY="475.0" prefHeight="25.0" prefWidth="264.0" />
-      <AnchorPane layoutX="824.0" layoutY="324.0" prefHeight="40.0" prefWidth="93.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="825.0" layoutY="228.0" prefHeight="40.0" prefWidth="93.0" style="-fx-background-color: #000000;">
          <children>
             <Label alignment="TOP_CENTER" layoutX="7.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #FFFFFF;" text="Pet Tag" textFill="#222121">
                <font>
@@ -142,7 +142,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <TextField fx:id="petTagTextField" layoutX="828.0" layoutY="371.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField fx:id="petTagTextField" layoutX="823.0" layoutY="275.0" prefHeight="25.0" prefWidth="264.0" />
       <AnchorPane layoutX="871.0" layoutY="519.0" prefHeight="128.0" prefWidth="139.0" style="-fx-background-color: #808000;">
          <children>
             <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: #000000;">
@@ -154,9 +154,9 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="36.0" layoutY="70.0" prefHeight="46.0" prefWidth="68.0" style="-fx-background-color: #000000;">
+            <AnchorPane layoutX="36.0" layoutY="70.0" prefHeight="46.0" prefWidth="74.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button layoutX="6.0" layoutY="7.0" mnemonicParsing="false" onAction="#clearButtonClicked" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: #FFFFFF;" text="Clear" textFill="#252424">
+                  <Button layoutX="6.0" layoutY="7.0" mnemonicParsing="false" onAction="#clearButtonClicked" prefHeight="31.0" prefWidth="62.0" style="-fx-background-color: #FFFFFF;" text="Clear" textFill="#252424">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -166,6 +166,15 @@
          </children>
       </AnchorPane>
       <ComboBox fx:id="Combo" layoutX="823.0" layoutY="176.0" onAction="#ComboButtonPushed" prefHeight="25.0" prefWidth="245.0" visible="false" />
-      <TextField fx:id="roomNumberTextField" layoutX="828.0" layoutY="275.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField fx:id="roomNumberTextField" layoutX="823.0" layoutY="176.0" prefHeight="25.0" prefWidth="264.0" />
+      <AnchorPane layoutX="943.0" layoutY="421.0" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="4.0" layoutY="8.0" mnemonicParsing="false" onAction="#getEstimatedPriceButtonClicked" text="Get Estimated Price">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
