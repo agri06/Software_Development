@@ -18,6 +18,13 @@ public class AdminData {
     public AdminData() {
     }
 
+    public AdminData(int Id, String username, String emailAddress, String password) {
+        this.Id = Id;
+        this.username = username;
+        this.emailAddress = emailAddress;
+        this.password = password;
+    }
+
     public int getId() {
         return Id;
     }
