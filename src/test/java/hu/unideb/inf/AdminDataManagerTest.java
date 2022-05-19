@@ -2,6 +2,7 @@ package hu.unideb.inf;
 
 import hu.unideb.inf.model.AdminData;
 import hu.unideb.inf.model.AdminDataManager;
+import hu.unideb.inf.model.BillData;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
@@ -41,5 +42,12 @@ public class AdminDataManagerTest extends TestCase {
         adminDataManager.entityManager.merge(admin);
         adminDataManager.entityManager.getTransaction().commit();
     }
-    
+
+    @Test
+    public void testGetAllAdminData() {
+        TypedQuery<AdminData> query = adminDataManager.entityManager.createQuery("SELECT adminData FROM AdminData adminData", AdminData.class);
+        List<AdminData> queriedAdminList = query.getResultList();
+        System.out.println(queriedAdminList.size());
+        Assert.assertEquals(14,queriedAdminList.size());
+    }
 }
