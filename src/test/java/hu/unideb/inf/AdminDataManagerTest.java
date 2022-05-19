@@ -13,7 +13,7 @@ public class AdminDataManagerTest extends TestCase {
 
     @Before
     public void setUp() throws Exception {
-        admin = new AdminData(1, "ali", "ali@test.com", "123");
+        admin = new AdminData( "ali", "ali@test.com", "123");
         adminDataManager = new AdminDataManager();
     }
 
