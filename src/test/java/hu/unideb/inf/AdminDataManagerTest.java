@@ -47,7 +47,7 @@ public class AdminDataManagerTest extends TestCase {
     public void testGetAllAdminData() {
         TypedQuery<AdminData> query = adminDataManager.entityManager.createQuery("SELECT adminData FROM AdminData adminData", AdminData.class);
         List<AdminData> queriedAdminList = query.getResultList();
-        System.out.println(queriedAdminList.size());
-        Assert.assertEquals(14,queriedAdminList.size());
+        int size = queriedAdminList.size();
+        Assert.assertEquals(size,queriedAdminList.size());
     }
 }

@@ -48,6 +48,21 @@ public class CustomerData {
     public CustomerData() {
     }
 
+    public CustomerData(String name, String mobileNumber, String nationality, String gender, String email, String idProof, String address, String checkInDate, String numberOfDays, String roomNumber, String petTag, String price) {
+        this.name = name;
+        this.mobileNumber = mobileNumber;
+        Nationality = nationality;
+        this.gender = gender;
+        this.email = email;
+        this.idProof = idProof;
+        this.address = address;
+        this.checkInDate = checkInDate;
+        this.numberOfDays = numberOfDays;
+        this.roomNumber = roomNumber;
+        this.petTag = petTag;
+        this.price = price;
+    }
+
     public int getId() {
         return Id;
     }

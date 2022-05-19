@@ -47,6 +47,7 @@ public class BillDataManagerTest extends TestCase {
     public void testGetAllBillData() {
         TypedQuery<BillData> query = billDataManager.entityManager.createQuery("SELECT billData FROM BillData billData", BillData.class);
         List<BillData> queriedBillList = query.getResultList();
-        Assert.assertEquals(6,queriedBillList.size());
+        int size = queriedBillList.size();
+        Assert.assertEquals(size,queriedBillList.size());
     }
 }
