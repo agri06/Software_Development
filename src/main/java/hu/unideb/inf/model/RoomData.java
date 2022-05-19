@@ -32,6 +32,14 @@ public class RoomData {
     public RoomData() {
     }
 
+    public RoomData(String roomNo, String roomType, String bed, String price, String status) {
+        this.roomNo = roomNo;
+        this.roomType = roomType;
+        this.bed = bed;
+        this.price = price;
+        this.status = status;
+    }
+
     public int getId() {
         return Id;
     }
