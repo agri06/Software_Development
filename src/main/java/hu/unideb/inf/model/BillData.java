@@ -33,6 +33,16 @@ public class BillData {
     public BillData() {
     }
 
+    public BillData(String name, String idProof, String address, String checkInDate, String numberOfDays, String petTag, String price) {
+        this.name = name;
+        this.idProof = idProof;
+        this.address = address;
+        this.checkInDate = checkInDate;
+        this.numberOfDays = numberOfDays;
+        this.petTag = petTag;
+        this.price = price;
+    }
+
     public int getId() {
         return Id;
     }

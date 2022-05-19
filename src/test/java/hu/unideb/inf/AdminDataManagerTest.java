@@ -3,8 +3,12 @@ package hu.unideb.inf;
 import hu.unideb.inf.model.AdminData;
 import hu.unideb.inf.model.AdminDataManager;
 import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class AdminDataManagerTest extends TestCase {
 
@@ -24,12 +28,18 @@ public class AdminDataManagerTest extends TestCase {
         adminDataManager.entityManager.getTransaction().commit();
     }
 
+    @Test
     public void testDeleteAdminData() {
+        adminDataManager.entityManager.getTransaction().begin();
+        adminDataManager.entityManager.remove(admin);
+        adminDataManager.entityManager.getTransaction().commit();
     }
 
+    @Test
     public void testUpdateAdminData() {
+        adminDataManager.entityManager.getTransaction().begin();
+        adminDataManager.entityManager.merge(admin);
+        adminDataManager.entityManager.getTransaction().commit();
     }
-
-    public void testGetAllData() {
-    }
+    
 }
