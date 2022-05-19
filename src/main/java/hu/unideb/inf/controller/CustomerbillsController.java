@@ -3,7 +3,6 @@ package hu.unideb.inf.controller;
 import hu.unideb.inf.model.BillData;
 import hu.unideb.inf.model.BillDataDAOInterface;
 import hu.unideb.inf.model.BillDataManager;
-import hu.unideb.inf.model.CustomerData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

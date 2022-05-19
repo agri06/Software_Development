@@ -18,9 +18,6 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         MainApp.stage = stage;
-
-
-
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/home.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setTitle("Hotel Management");
